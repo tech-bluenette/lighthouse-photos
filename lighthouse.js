@@ -1,5 +1,7 @@
 // 1. Wrap link in image tag
-// 2. Make more than one image appear
+  // 2. Show only one image at a time; 
+  // 3. rotate images using fadein/fadeout every couple of seconds
+
 
 // CLIENT ID d403150a12f3461a88d3b6cf928b46e3
 // CLIENT SECRET 45b095aff0854d919cc7a0395f1ca2c2
@@ -16,7 +18,7 @@ $(document).ready(function() {
         var instagrams = data.data;
         for(var i=0; i < instagrams.length; i++) {
             var photo = instagrams[i]; 
-          $('#photos-list').append("<li>" + photo.images.low_resolution.url + "</li>");
+          $('#photos-list').append("<li><img src='"+photo.images.low_resolution.url+"'></li>");
         }       
     }
     
@@ -24,6 +26,8 @@ $(document).ready(function() {
     $('#load').click(function() {
         $.getJSON(url, lighthousePhotoRetriever);        
     });
+
+
 });
 
 

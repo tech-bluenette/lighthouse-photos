@@ -1,15 +1,23 @@
+// 1. Wrap link in image tag
+// 2. Make more than one image appear
 
+// CLIENT ID d403150a12f3461a88d3b6cf928b46e3
+// CLIENT SECRET 45b095aff0854d919cc7a0395f1ca2c2
+// WEBSITE URL https://github.com/tech-bluenette/lighthouse-photos
+// REDIRECT URI  https://github.com/tech-bluenette
 
 $(document).ready(function() {
     
-    var url = "https://api.instagram.com/v1/tags/snow/media/recent?access_token=220041863.f59def8.6c6165821a5d4d2bb41bb31fd9db4f90&callback=?";
+    var url = "https://api.instagram.com/v1/tags/lighthouse/media/recent?access_token=220041863.f59def8.6c6165821a5d4d2bb41bb31fd9db4f90&callback=?";
     
 
 
     var lighthousePhotoRetriever = function(data) {
         var instagrams = data.data;
-        $('#photos-list').append("<li>" + instagrams[0].images.low_resolution.url + "</li>");
-
+        for(var i=0; i < instagrams.length; i++) {
+            var photo = instagrams[i]; 
+          $('#photos-list').append("<li>" + photo.images.low_resolution.url + "</li>");
+        }       
     }
     
     
@@ -18,8 +26,5 @@ $(document).ready(function() {
     });
 });
 
-   // var movieResponseHandler = function(data) {
-   //      var movies = data.movies;
-   //      for(var i=0; i <= movies.length; i++) {
-   //          var movie = movies[i];   
-   //          $('#movies-list').append("<li>" + movie.title + "</li>");
+
+ 

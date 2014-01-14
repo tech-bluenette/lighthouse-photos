@@ -6,9 +6,9 @@
 
   var lighthousePhotoRetriever = function(data) {
       var instagrams = data.data;
-      for(var i=0; i < instagrams.length; i++) {
+        for(var i=0; i < instagrams.length; i++) {
           var photo = instagrams[i]; 
-        $('#slideshow').append("<img src='"+photo.images.low_resolution.url+"'>");
+          $('#slideshow').append("<img src='"+photo.images.low_resolution.url+"'>");
       }       
   }
 
@@ -16,7 +16,7 @@
 function slideSwitch() {
   var $active = $('#slideshow IMG.active');
 
-  if ( $active.length == 0 ) $active = $('#slideshow IMG:last');
+    if ( $active.length == 0 ) $active = $('#slideshow IMG:last');
 
   var $next =  $active.next().length ? $active.next()
       : $('#slideshow IMG:first');

@@ -1,20 +1,23 @@
 body {
-background-color: black;  
+  background-color: black;  
 }
 
-#container {
-text-align: center;
-
+#outer {
+  width: 25%;
+  margin: 0 auto;
 }
 
+#load {
 
+}
 
 h1 {
   color: white;
+  font-family: Papyrus, fantasy;
 }
 
 #slideshow {
-    position:relative;
+    position: relative;
     height:350px;
 }
 
